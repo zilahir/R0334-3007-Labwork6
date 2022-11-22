@@ -75,6 +75,7 @@
     "@capacitor/cli": "4.5.0",
     "@ionic/lab": "3.2.15",
     "@types/redux-logger": "^3.0.9",
+    "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
     "eslint-plugin-import": "^2.26.0",

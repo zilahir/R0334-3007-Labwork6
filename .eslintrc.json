@@ -20,6 +20,7 @@
         ],
         "@typescript-eslint/explicit-function-return-type": ["error", {
             "allowTypedFunctionExpressions": false
-        }]
+        }],
+        "unicorn/prefer-query-selector": "off"
       }
 }

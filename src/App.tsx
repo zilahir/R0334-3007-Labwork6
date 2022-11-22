@@ -3,6 +3,7 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
+import { Route } from "react-router-dom";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -24,6 +25,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import { ReactElement } from 'react';
 import BottomTabNavigation from './components/BottomTabNavigation';
+import Login from './pages/Login';
 
 setupIonicReact();
 
@@ -31,6 +33,9 @@ const App: React.FC = (): ReactElement => (
   <IonApp>
     <IonReactRouter>
         <BottomTabNavigation />
+        <Route exact path="/login">
+            <Login />
+          </Route>
     </IonReactRouter>
   </IonApp>
 );

@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 import { User } from './../../../types/user/index';
 
-interface AuthState {
+export interface AuthState {
     user: User | undefined,
     isLoggedIn: boolean;
 }

@@ -1,4 +1,6 @@
-const ProductPage = () => (
+import { ReactElement } from "react";
+
+const ProductPage = (): ReactElement => (
     <div>
         <p>
             hello from product page

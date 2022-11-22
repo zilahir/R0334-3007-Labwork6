@@ -1,8 +1,9 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { ReactElement } from 'react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab1.css';
 
-const Tab1: React.FC = () => {
+const Tab1: React.FC = (): ReactElement => {
   return (
     <IonPage>
       <IonHeader>

@@ -10,5 +10,16 @@
         "plugin:react/jsx-runtime",
         "plugin:@typescript-eslint/recommended",
         "plugin:import/typescript"
-      ]
+      ],
+      "rules": {
+        "unicorn/filename-case": [
+            "error",
+            {
+                "case": "pascalCase"
+            }
+        ],
+        "@typescript-eslint/explicit-function-return-type": ["error", {
+            "allowTypedFunctionExpressions": false
+        }]
+      }
 }

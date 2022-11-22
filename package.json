@@ -6,6 +6,7 @@
     "@capacitor/app": "4.1.1",
     "@capacitor/core": "4.5.0",
     "@capacitor/haptics": "4.1.0",
+    "@capacitor/ios": "4.5.0",
     "@capacitor/keyboard": "4.1.0",
     "@capacitor/status-bar": "4.1.0",
     "@ionic/react": "^6.0.0",
@@ -42,6 +43,8 @@
     "workbox-streams": "^5.1.4"
   },
   "scripts": {
+    "start:dev": "ionic serve --lab --external",
+    "start:ios:dev": "ionic capacitor run ios -l --external",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
@@ -66,7 +69,8 @@
     ]
   },
   "devDependencies": {
-    "@capacitor/cli": "4.5.0"
+    "@capacitor/cli": "4.5.0",
+    "@ionic/lab": "3.2.15"
   },
   "description": "An Ionic project"
 }

@@ -1,11 +1,14 @@
 import { ReactElement } from "react"
+import Layout from "../../components/Layout"
 
 const Login = (): ReactElement => (
-    <div>
-        <p>
-            hello from login page
-        </p>
-    </div>
+    <Layout>
+        <div>
+            <p>
+                hello from login page
+            </p>
+        </div>
+    </Layout>
 )
 
 export default Login

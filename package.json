@@ -1,5 +1,5 @@
 {
-  "name": "R0334-3007-Labwork6",
+  "name": "r0334-3007-labwork6",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -59,12 +59,6 @@
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -81,6 +75,12 @@
     "@capacitor/cli": "4.5.0",
     "@ionic/lab": "3.2.15",
     "@types/redux-logger": "^3.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-unicorn": "^45.0.0",
     "redux-logger": "^3.0.6"
   },
   "description": "An Ionic project"

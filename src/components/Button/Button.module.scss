@@ -5,6 +5,7 @@
     .buttonGeneric {
         width: $button-width;
         height: $button-height;
+        border-radius: $button-border-radius;
 
         &.filled {
             background: $button-bg-filled;

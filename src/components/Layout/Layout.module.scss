@@ -1,6 +1,10 @@
 .layoutRootContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     
     .layoutInnerContainer {
         padding: 10px;
+        flex: 1;
     }
 }

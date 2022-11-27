@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
-import { User } from '../../../../types/user';
+import { User } from '../../../types/user';
 
 
 export const dummyUser: User = {

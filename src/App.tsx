@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import {
   IonApp,
   setupIonicReact
@@ -25,7 +26,8 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import { ReactElement } from 'react';
 import BottomTabNavigation from './components/BottomTabNavigation';
-import Login from './pages/Login';
+
+import { routeApi } from './utils/routes';
 
 setupIonicReact();
 
@@ -33,9 +35,20 @@ const App: React.FC = (): ReactElement => (
   <IonApp>
     <IonReactRouter>
         <BottomTabNavigation />
-        <Route exact path="/login">
-            <Login />
-          </Route>
+          {
+            routeApi.getDefaultRoute().map((route): ReactElement => (
+              <Route
+                key={route.url}
+                // exact
+                path={route.url}
+              >
+                {
+                  // @ts-ignore test
+                  <route.component />
+                }
+              </Route>
+            ))
+          }
     </IonReactRouter>
   </IonApp>
 );

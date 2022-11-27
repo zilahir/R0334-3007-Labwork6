@@ -11,6 +11,7 @@ interface IInput {
     placeHolder: string;
     containerClass?: string;
     inputClass?: string
+    value: string;
 }
 
 const Input = ({
@@ -18,7 +19,8 @@ const Input = ({
     onChangeHandler,
     placeHolder,
     containerClass,
-    inputClass
+    inputClass,
+    value,
 }: IInput): ReactElement => (
     <div className={classnames([
         containerClass,
@@ -32,6 +34,7 @@ const Input = ({
             ])}
             onChange={(event): void => onChangeHandler(event.target.value)}
             placeholder={placeHolder}
+            value={value}
         />
     </div>
 )

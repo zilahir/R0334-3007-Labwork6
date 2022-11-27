@@ -37,7 +37,7 @@ export const appRoutes: ReadonlyArray<AppRoute> = [
     },
     {
         label: 'Sign up',
-        url: '/signp',
+        url: '/signup',
         component: SignupPage
     },
     {

@@ -1,0 +1,9 @@
+.inputRootContainer {
+    .inputElement {
+
+        height: 37px;
+        &:focus {
+            outline: none;
+        }
+    }
+}

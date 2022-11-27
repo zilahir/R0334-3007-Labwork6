@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import {
   IonApp,
   setupIonicReact
@@ -43,8 +42,7 @@ const App: React.FC = (): ReactElement => (
                 path={route.url}
               >
                 {
-                  // @ts-ignore test
-                  <route.component />
+                  route.component
                 }
               </Route>
             ))

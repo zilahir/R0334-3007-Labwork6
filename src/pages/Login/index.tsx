@@ -1,12 +1,14 @@
 import { ReactElement } from "react"
+import Button from "../../components/Button"
 import Layout from "../../components/Layout"
 
 const Login = (): ReactElement => (
     <Layout>
         <div>
-            <p>
-                hello from login page
-            </p>
+            <Button
+                label="Login"
+                onClick={(): void => alert("login")}
+            />
         </div>
     </Layout>
 )

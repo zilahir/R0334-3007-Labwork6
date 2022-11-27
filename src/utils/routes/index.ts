@@ -12,7 +12,7 @@ export interface Tab {
     icon: string,
     color: string,
     backgroundColor: string,
-    component?: () => ReactElement,
+    component?: ReactElement,
     order: number,
 }
 
@@ -27,7 +27,7 @@ export const appRoutes: ReadonlyArray<AppRoute> = [
     {
         label: 'Products',
         url: '/products',
-        component: ProductPage,
+        component: ProductPage(),
         tab: {
             icon: flowerOutline,
             color: "#76b140",
@@ -38,12 +38,12 @@ export const appRoutes: ReadonlyArray<AppRoute> = [
     {
         label: 'Sign up',
         url: '/signp',
-        component: SignupPage
+        component: SignupPage()
     },
     {
         label: 'Login',
         url: '/login',
-        component: Login
+        component: Login()
     }
 ]
 

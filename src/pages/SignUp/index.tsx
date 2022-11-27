@@ -1,12 +1,14 @@
 import { ReactElement } from "react"
+import Button from "../../components/Button"
 import Layout from "../../components/Layout"
 
 const SignupPage = (): ReactElement => (
     <Layout>
         <div>
-            <p>
-                hello from signuppage
-            </p>
+            <Button
+                label="SignUp"
+                onClick={(): void => alert("login")}
+            />
         </div>
     </Layout>
 )

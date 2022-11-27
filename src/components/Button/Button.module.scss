@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+
+.buttonRootContainer {
+    flex: 1;
+    .buttonGeneric {
+        width: $button-width;
+        height: $button-height;
+
+        &.filled {
+            background: $button-bg-filled;
+        }
+
+        &.outlined {
+            background: $button-bg-outlined;
+        }
+    }
+}

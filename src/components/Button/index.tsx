@@ -3,7 +3,7 @@ import { HTMLProps, ReactElement } from "react";
 
 import styles from "./Button.module.scss";
 
-type ButtonVariant = "filled" | "outlined"
+type ButtonVariant = "filled" | "outlined" | "text"
 
 interface IButton extends HTMLProps<HTMLButtonElement> {
     containerClass?: string;

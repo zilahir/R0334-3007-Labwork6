@@ -3,3 +3,11 @@
     display: flex;
     align-items: flex-end;
 }
+
+.loginInputContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: flex-end;
+    gap: 15px;
+}

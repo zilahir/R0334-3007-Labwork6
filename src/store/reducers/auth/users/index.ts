@@ -8,7 +8,7 @@ export const dummyUser: User = {
     name: "Laurea Student",
     id: uuidv4(),
     createdAt: Date.now(),
-    password: "lorem123+"
+    password: "lorem123!"
 }
 
 interface UserState {

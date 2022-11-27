@@ -23,6 +23,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import './styles/reset.css';
 import { ReactElement } from 'react';
 import BottomTabNavigation from './components/BottomTabNavigation';
 

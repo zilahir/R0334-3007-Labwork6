@@ -16,9 +16,6 @@ const Layout = ({ children }: Ilayout): ReactElement => {
         <div className={styles.layoutRootContainer}>
             <Header />
             <div className={styles.layoutInnerContainer}>
-                <p>
-                    hello from layout
-                </p>
                 <>
                     {children}
                 </>

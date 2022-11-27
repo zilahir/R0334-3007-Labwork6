@@ -1,7 +1,12 @@
+@import "../../styles/variables";
+
 .inputRootContainer {
     .inputElement {
+        border-radius: $border-radii-size-1;
+        height: $input-height;
+        width: $input-width;
+        padding-left: 10px;
 
-        height: 37px;
         &:focus {
             outline: none;
         }

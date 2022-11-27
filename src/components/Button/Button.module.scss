@@ -6,6 +6,7 @@
         width: $button-width;
         height: $button-height;
         border-radius: $button-border-radius;
+        font-size: 16px;
 
         &.filled {
             background: $button-bg-filled;

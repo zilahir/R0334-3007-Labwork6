@@ -1,7 +1,19 @@
+/* GENERICS */
+
+$border-radii-size-1: 10px;
+$input-element-default-height: 37px;
+
+
 /* BUTTONS */
 
 $button-bg-filled: rgba(#3b3b3b, 1);
 $button-bg-outlined: transparent;
 $button-width: 100%;
-$button-height: 37px;
-$button-border-radius: 10px;
+$button-height: $input-element-default-height;
+$button-border-radius: $border-radii-size-1;
+
+/* INPUTS */
+
+$input-height: $input-element-default-height;
+$input-border-radius: $border-radii-size-1;
+$input-width: 100%;

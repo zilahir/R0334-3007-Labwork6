@@ -1,9 +1,9 @@
 export interface User {
+    id: string;
     email: string;
-    userId: string;
     createdAt: number;
-}
-
-export interface NewUser extends Omit<User, "userId" | "createdAt"> {
+    name: string;
     password: string;
 }
+
+export type NewUser = Pick<User, "email" | "name" | "password">

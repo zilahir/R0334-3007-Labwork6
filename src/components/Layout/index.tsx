@@ -13,6 +13,8 @@ const Layout = ({ children }: Ilayout): ReactElement => {
     const location = useLocation()
     const thisRoute = routeApi.getLocationByUrl(location.pathname as RouteURL)
 
+    console.log('thisRoute', thisRoute)
+
     return (
     <IonPage>
         <div className={styles.layoutRootContainer}>

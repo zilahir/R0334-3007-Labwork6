@@ -1,11 +1,12 @@
 import { ReactElement } from "react";
+import Layout from "../../components/Layout";
 
 const ProductPage = (): ReactElement => (
-    <div>
+    <Layout>
         <p>
             hello from product page
         </p>
-    </div>
+    </Layout>
 )
 
 export default ProductPage;

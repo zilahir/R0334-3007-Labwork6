@@ -32,26 +32,30 @@ import { routeApi } from './utils/routes';
 
 setupIonicReact();
 
-const App: React.FC = (): ReactElement => (
-  <IonApp>
-    <IonReactRouter>
-        <BottomTabNavigation />
-          {
-            routeApi.getDefaultRoute().map((route): ReactElement => (
-              <Route
-                key={route.url}
-                // exact
-                path={route.url}
-              >
-                {
-                  // @ts-ignore this should be typed
-                  <route.component />
-                }
-              </Route>
-            ))
-          }
-    </IonReactRouter>
-  </IonApp>
-);
+const App: React.FC = (): ReactElement => {
+  const nonTabRoutes = routeApi.getDefaultRoute();
+  const tabRoutes = routeApi.getTabRoutes()
+  return (
+    <IonApp>
+      <IonReactRouter>
+          <BottomTabNavigation />
+            {
+              [...nonTabRoutes, ...tabRoutes].map((route): ReactElement => (
+                <Route
+                  key={route.url}
+                  // exact
+                  path={route.url}
+                >
+                  {
+                    // @ts-ignore this should be typed
+                    <route.component />
+                  }
+                </Route>
+              ))
+            }
+      </IonReactRouter>
+    </IonApp>
+  );
+}
 
 export default App;

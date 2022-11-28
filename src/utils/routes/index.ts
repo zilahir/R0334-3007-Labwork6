@@ -1,6 +1,7 @@
+
 import { ReactElement } from 'react';
 import ProductPage from '../../pages/ProductPage';
-import { has } from "lodash"
+import { has, orderBy } from "lodash"
 import { flowerOutline, returnUpBackOutline } from 'ionicons/icons'
 
 import SignupPage from '../../pages/SignUp';
@@ -49,6 +50,7 @@ export const appRoutes: ReadonlyArray<AppRoute> = [
             backgroundColor: "#ddf7c5",
             order: 1,
         },
+        hasHeader: true
     },
     {
         label: 'Sign up',
@@ -66,6 +68,6 @@ export const appRoutes: ReadonlyArray<AppRoute> = [
 export const routeApi = {
     // this is basically every route which is not requires authentication
     getDefaultRoute: (): AppRoute[] => appRoutes.filter((route): boolean => !has(route, ["tab"])),
-    getTabRoutes: (): void => console.log('TODO finish this'),
+    getTabRoutes: (): AppRoute[] => orderBy(appRoutes.filter((route): boolean => has(route, ["tab"])), ["tab.order", ["asc"]]),
     getLocationByUrl: (urlToFind: RouteURL): AppRoute => appRoutes.find(({ url }): boolean => url === urlToFind) as AppRoute,
 }

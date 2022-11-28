@@ -17,7 +17,7 @@ import ProtectedRoute from "../ProtectedRoute";
 
 const BottomTabNavigation = (): ReactElement => (
     <ProtectedRoute>
-        <IonTabs>
+        <>
         <IonRouterOutlet>
             <Route exact path="/tab1">
                 <ProtectedRoute>
@@ -48,7 +48,7 @@ const BottomTabNavigation = (): ReactElement => (
             <IonLabel>Tab 3</IonLabel>
             </IonTabButton>
         </IonTabBar>
-    </IonTabs>
+        </>
     </ProtectedRoute>
 )
 

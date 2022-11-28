@@ -1,10 +1,16 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import {
   IonApp,
+  IonIcon,
+  IonLabel,
+  IonRouterOutlet,
+  IonTabBar,
+  IonTabButton,
+  IonTabs,
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { Route } from "react-router-dom";
+import { Redirect, Route } from "react-router-dom";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -29,30 +35,57 @@ import { ReactElement } from 'react';
 import BottomTabNavigation from './components/BottomTabNavigation';
 
 import { routeApi } from './utils/routes';
+import { useAppSelector } from './store/hooks';
+import { AuthState } from './store/reducers/auth';
 
 setupIonicReact();
 
 const App: React.FC = (): ReactElement => {
   const nonTabRoutes = routeApi.getDefaultRoute();
   const tabRoutes = routeApi.getTabRoutes()
+
+  const { isLoggedIn } = useAppSelector((store): AuthState => store.auth)
   return (
     <IonApp>
       <IonReactRouter>
-          <BottomTabNavigation />
-            {
-              [...nonTabRoutes, ...tabRoutes].map((route): ReactElement => (
-                <Route
-                  key={route.url}
-                  // exact
-                  path={route.url}
-                >
-                  {
-                    // @ts-ignore this should be typed
-                    <route.component />
-                  }
+          <IonTabs>
+            <IonRouterOutlet>
+              {
+                [...nonTabRoutes, ...tabRoutes].map((route): ReactElement => (
+                  <Route
+                    key={route.url}
+                    exact={route.url !== '/products'}
+                    path={route.url}
+                  >
+                    {
+                      // @ts-ignore this should be typed
+                      <route.component />
+                    }
+                  </Route>
+                ))
+              }
+                <Route exact path="/">
+                  <Redirect to={isLoggedIn ? "/products" : "/login"} />
                 </Route>
-              ))
-            }
+              </IonRouterOutlet>
+              <IonTabBar
+                slot="bottom"
+                style={{
+                  display: isLoggedIn ? "flex" : "none"
+                }}
+              >
+                {
+                  tabRoutes.map((tab, index): ReactElement => (
+                    <IonTabButton key={tab.url} href={tab.url} tab={`tab${index+1}`}>
+                      <IonIcon icon={tab.tab?.icon} />
+                      <IonLabel>
+                        {tab.label}
+                      </IonLabel>
+                    </IonTabButton>
+                  ))
+                }
+              </IonTabBar>
+          </IonTabs>
       </IonReactRouter>
     </IonApp>
   );

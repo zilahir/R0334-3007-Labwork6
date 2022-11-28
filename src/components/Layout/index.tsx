@@ -1,8 +1,9 @@
 import { IonPage } from "@ionic/react";
 import { ReactElement } from "react"
 import { useLocation } from "react-router";
-import { routeApi, RouteURL } from "../../utils/routes";
+import classnames from "classnames"
 
+import { routeApi, RouteURL } from "../../utils/routes";
 import Header from "./components/Header";
 import styles from "./Layout.module.scss";
 interface Ilayout {
@@ -13,8 +14,6 @@ const Layout = ({ children }: Ilayout): ReactElement => {
     const location = useLocation()
     const thisRoute = routeApi.getLocationByUrl(location.pathname as RouteURL)
 
-    console.log('thisRoute', thisRoute)
-
     return (
     <IonPage>
         <div className={styles.layoutRootContainer}>
@@ -23,7 +22,10 @@ const Layout = ({ children }: Ilayout): ReactElement => {
                     <Header />
                 )
             }
-            <div className={styles.layoutInnerContainer}>
+            <div className={classnames([
+                styles.layoutInnerContainer,
+                !thisRoute.hasHeader && styles.noHeaderPadding
+            ])}>
                 <>
                     {children}
                 </>

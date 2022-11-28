@@ -50,7 +50,7 @@ export const appRoutes: ReadonlyArray<AppRoute> = [
             backgroundColor: "#ddf7c5",
             order: 1,
         },
-        hasHeader: true
+        hasHeader: false
     },
     {
         label: 'Sign up',

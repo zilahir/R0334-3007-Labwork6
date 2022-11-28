@@ -11,7 +11,7 @@ export const dummyUser: User = {
     password: "lorem123!"
 }
 
-interface UserState {
+export interface UserState {
     users: User[]
 }
 

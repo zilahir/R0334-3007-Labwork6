@@ -7,7 +7,7 @@ import Layout from "../../components/Layout"
 
 import styles from "./Login.module.scss";
 
-const Login = (): ReactElement => {
+const LoginPage = (): ReactElement => {
 
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("")
@@ -42,4 +42,4 @@ const Login = (): ReactElement => {
     )
 }
 
-export default Login
+export default LoginPage

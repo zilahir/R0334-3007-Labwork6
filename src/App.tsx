@@ -49,7 +49,6 @@ const App: React.FC = (): ReactElement => {
     <IonApp>
       <IonReactRouter>
           <IonTabs>
-          {/* <BottomTabNavigation /> */}
             <IonRouterOutlet>
               {
                 [...nonTabRoutes, ...tabRoutes].map((route): ReactElement => (
@@ -69,7 +68,12 @@ const App: React.FC = (): ReactElement => {
                   <Redirect to={isLoggedIn ? "/products" : "/login"} />
                 </Route>
               </IonRouterOutlet>
-              <IonTabBar slot="bottom">
+              <IonTabBar
+                slot="bottom"
+                style={{
+                  display: isLoggedIn ? "flex" : "none"
+                }}
+              >
                 {
                   tabRoutes.map((tab, index): ReactElement => (
                     <IonTabButton key={tab.url} href={tab.url} tab={`tab${index+1}`}>

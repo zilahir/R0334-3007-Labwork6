@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 import { User } from './../../../types/user/index';
 
@@ -12,10 +12,6 @@ const initialState = {
     isLoggedIn: false
 } as AuthState
 
-const loginSuccess = createAsyncThunk('auth/success', async (user: User, thunkApi): Promise<{ user: User }> => {
-    // we probabyl going to have to call another function
-    return {user}
-})
 
 const authSlice = createSlice({
     name: "app/auth",
@@ -24,17 +20,16 @@ const authSlice = createSlice({
         logOut(state): void {
             state.isLoggedIn = false;
             state.user = undefined
+        },
+        handleLogin(state, action): void {
+            state.isLoggedIn = true;
+            state.user = action.payload
         }
-    },
-    extraReducers(builder): void {
-        builder.addCase(loginSuccess.fulfilled, (state, action): void => {
-            state.user = action.payload.user
-        })
     },
 })
 
 const { reducer, actions } = authSlice
 
-export const { logOut } = actions
+export const { logOut, handleLogin } = actions
 
 export default reducer;

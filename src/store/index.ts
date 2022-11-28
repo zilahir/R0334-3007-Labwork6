@@ -4,9 +4,11 @@ import logger from "redux-logger";
 import { configureStore, MiddlewareArray } from '@reduxjs/toolkit'
 
 import auth from "./reducers/auth";
+import users from "./reducers/users"
 
 const rootReducer = combineReducers({
     auth,
+    users
 })
 
 const middlewares = [thunk, logger]

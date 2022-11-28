@@ -1,14 +1,24 @@
 import { ReactElement, useState } from "react"
+import { useHistory } from "react-router";
 import { v4 as uuidv4 } from 'uuid';
 
 import Button from "../../components/Button"
 import Input from "../../components/Input"
 import Layout from "../../components/Layout"
 import { useAppDispatch } from "../../store/hooks";
+import { handleLogin } from "../../store/reducers/auth";
 import { createNewUser } from "../../store/reducers/users";
 import { User } from "../../types/user"
 
 import styles from "./Signup.module.scss"
+
+async function handleRegistration(): Promise<boolean> {
+    return new Promise((resolve): void => {
+        setTimeout((): void => {
+            resolve(true)
+        }, 2000)
+    })
+}
 
 const SignupPage = (): ReactElement => {
     const [email, setEmail] = useState<string>("");
@@ -16,8 +26,11 @@ const SignupPage = (): ReactElement => {
     const [name, setName] = useState<string>("");
 
     const dispatch = useAppDispatch()
+    const history = useHistory()
 
-    function handleSignup(): void {
+
+
+    async function handleSignup(): Promise<void> {
         const user: User = {
             email,
             password,
@@ -26,7 +39,18 @@ const SignupPage = (): ReactElement => {
             createdAt: Date.now(),
         }
 
+        // TODO: error handling
+
         dispatch(createNewUser({user}))
+        handleRegistration().then((): void => {
+            console.log('userlogin', user)
+            dispatch(handleLogin(user))
+            history.push('/products')
+        })
+
+        // success 
+
+
     }
     return (
         <Layout>
@@ -51,7 +75,7 @@ const SignupPage = (): ReactElement => {
             <div className={styles.signupBtnContainer}>
                 <Button
                         label="Sign Up"
-                        onClick={(): void => handleSignup()}
+                        onClick={(): Promise<void> => handleSignup()}
                     />
             </div>
         </Layout>

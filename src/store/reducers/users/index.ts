@@ -24,7 +24,7 @@ const userSlice = createSlice({
     initialState, 
     reducers: {
         createNewUser(state, action): void {
-            state.users = [...state.users, ...action.payload.user]
+            state.users = [...state.users, action.payload.user]
         }
     }
 })

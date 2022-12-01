@@ -32,7 +32,6 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import './styles/reset.css';
 import { ReactElement } from 'react';
-import BottomTabNavigation from './components/BottomTabNavigation';
 
 import { routeApi } from './utils/routes';
 import { useAppSelector } from './store/hooks';

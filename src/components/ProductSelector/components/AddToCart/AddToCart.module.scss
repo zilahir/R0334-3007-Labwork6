@@ -1,3 +1,15 @@
 .addToCartRootContainer {
     display: flex;
+    border: 1px solid #cecece;
+    border-radius: 6px;
+    padding: 4px 6px;
+
+    p {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+    }
 }

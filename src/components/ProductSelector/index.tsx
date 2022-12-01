@@ -40,7 +40,7 @@ const ProductSelector = (): ReactElement => {
                                                 </div>
                                             </div>
                                             <div className={styles.right}></div>
-                                                <AddToCart />
+                                                <AddToCart productId={product.id} />
                                         </IonCardContent>
                                     </IonCard>
                                 </IonCol>

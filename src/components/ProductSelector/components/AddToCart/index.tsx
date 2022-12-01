@@ -1,11 +1,21 @@
+import { IonIcon } from "@ionic/react";
 import { ReactElement } from "react";
+import { addOutline, removeOutline } from 'ionicons/icons'
 
 import styles from "./AddToCart.module.scss"
 
-const AddToCart = (): ReactElement => (
+interface IAddToCart {
+    productId: string;
+}
+
+const AddToCart = ({ productId }: IAddToCart): ReactElement => (
     <div className={styles.addToCartRootContainer}>
-        <p>+</p>
-        <p>-</p>
+        <p>
+            <IonIcon icon={addOutline} />
+        </p>
+        <p>
+            <IonIcon icon={removeOutline} />
+        </p>
     </div>
 )
 

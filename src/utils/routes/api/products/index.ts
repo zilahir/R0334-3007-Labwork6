@@ -14,7 +14,7 @@ const productImages = [breadImage, cakeImage, cupCakeImage, donutImage, kifliIma
 
 interface Product {
     name: string;
-    price: number;
+    price: string;
     id: string;
     image: string;
 }
@@ -51,11 +51,11 @@ const products = [
     }
 ]
 
-export const bekaryProducts: ProductApi = {
+export const productsApi: ProductApi = {
     products: [...products],
     getAllProducts: (): Product[] => [...products].map(({ name }): Product => ({
         id: uuidv4(),
-        price: random(2.1, 7.1, true),
+        price: random(2.1, 7.1, true).toFixed(2),
         name,
         image: productImages[random(0, productImages.length - 1)]
     }))

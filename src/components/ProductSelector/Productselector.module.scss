@@ -1,0 +1,21 @@
+.singleProduct {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 0;
+
+    .productImage {
+        max-width: 60px;
+        margin: 0 auto;
+    }
+}
+
+.scrollerContainer {
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .productName {
+        font-size: 18px;
+    }
+}

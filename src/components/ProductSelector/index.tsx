@@ -5,6 +5,7 @@ import classnames from "classnames"
 
 import { productsApi } from "../../utils/routes/api/products";
 import styles from "./Productselector.module.scss";
+import AddToCart from "./components/AddToCart";
 
 const ProductSelector = (): ReactElement => {
     const products = productsApi.getAllProducts();
@@ -27,15 +28,19 @@ const ProductSelector = (): ReactElement => {
                                         <IonCardHeader className="ion-no-padding">
                                             <IonImg className={styles.productImage} src={product.image} />
                                         </IonCardHeader>
-                                        <IonCardContent>
-                                            <div className={ styles.slideCount }>
-                                                <h3 className={styles.productName}>
-                                                    {product.name}
-                                                </h3>
+                                        <IonCardContent className={styles.productCardContainer}>
+                                            <div className={styles.left}>
+                                                <div className={ styles.slideCount }>
+                                                    <h3 className={styles.productName}>
+                                                        {product.name}
+                                                    </h3>
+                                                </div>
+                                                <div className={ styles.slideHeader }>
+                                                    {product.price} €
+                                                </div>
                                             </div>
-                                            <div className={ styles.slideHeader }>
-                                                {product.price} €
-                                            </div>
+                                            <div className={styles.right}></div>
+                                                <AddToCart />
                                         </IonCardContent>
                                     </IonCard>
                                 </IonCol>

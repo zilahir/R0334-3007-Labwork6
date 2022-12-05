@@ -12,7 +12,7 @@ import toastBread from "../../../../assets/images/products/toastbread.png";
 
 const productImages = [breadImage, cakeImage, cupCakeImage, donutImage, kifliImage, pieImage, rollImage, toastBread]
 
-interface Product {
+export interface Product {
     name: string;
     price: string;
     id: string;

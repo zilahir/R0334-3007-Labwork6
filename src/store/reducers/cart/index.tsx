@@ -3,8 +3,10 @@ import { without, find } from "lodash"
 
 import { Product } from "../../../utils/routes/api/products";
 
+export type CartProduct = Pick<Product, "id" | "price">
+
 export interface CartState {
-    products: Pick<Product, "id" | "price">[]
+    products: CartProduct[]
 }
 
 const initialState = {

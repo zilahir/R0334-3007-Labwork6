@@ -24,7 +24,7 @@ const cartSlice = createSlice({
         },
 
         removeItemFromCart(state, action): void {
-            state.products = without(state.products, find(state.products, { id: action.payload.id })) as Item[]
+            state.products = without(state.products, find(state.products, { id: action.payload.id })) as Product[]
         }
     }
 })

@@ -1,14 +1,13 @@
 import { IonCard, IonCardContent, IonCardHeader, IonCol, IonContent, IonImg, IonSlide, IonSlides, IonVirtualScroll } from "@ionic/react";
-import { ReactElement } from "react";
+import { ReactElement, useMemo } from "react";
 import { Virtuoso } from 'react-virtuoso';
-import classnames from "classnames"
 
-import { productsApi } from "../../utils/routes/api/products";
+import { Product, productsApi } from "../../utils/routes/api/products";
 import styles from "./Productselector.module.scss";
 import AddToCart from "./components/AddToCart";
 
 const ProductSelector = (): ReactElement => {
-    const products = productsApi.getAllProducts();
+    const products = useMemo((): Product[] => productsApi.getAllProducts(), []);
 
     return (
         <IonContent>

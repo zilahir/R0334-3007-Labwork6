@@ -1,10 +1,11 @@
 import { IonIcon } from "@ionic/react";
 import { ReactElement } from "react";
 import { addOutline, removeOutline } from 'ionicons/icons'
+import classnames from "classnames"
 
 import styles from "./AddToCart.module.scss"
-import { useAppDispatch } from "../../../../store/hooks";
-import { addToCart, removeItemFromCart } from "../../../../store/reducers/cart";
+import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
+import { addToCart, CartState, removeItemFromCart } from "../../../../store/reducers/cart";
 
 interface IAddToCart {
     productId: string;
@@ -12,7 +13,11 @@ interface IAddToCart {
 }
 
 const AddToCart = ({ productId, price }: IAddToCart): ReactElement => {
-    const dispatch = useAppDispatch()
+    const dispatch = useAppDispatch();
+
+    const { products } = useAppSelector((store):CartState => store.cart)
+    
+    const isThisProductAdded = !products.some(({ id }): boolean => id === productId)
 
     function handleAttToCart(): void {
         dispatch(addToCart({
@@ -22,17 +27,28 @@ const AddToCart = ({ productId, price }: IAddToCart): ReactElement => {
     }
 
     function handleRemoveFromCart(): void {
-        dispatch(removeItemFromCart({
-            id: productId
-        }))
+        if (isThisProductAdded) {
+            void 0
+        } else {
+            dispatch(removeItemFromCart({
+                id: productId
+            }))
+        }
     }
+
+    
     return (
         <div className={styles.addToCartRootContainer}>
+            <p
+                onClick={(): void => handleRemoveFromCart()}
+                className={classnames(
+                    !products.some(({ id }): boolean => id === productId) && styles.disabled
+                )}
+            >
+                <IonIcon icon={removeOutline} />
+            </p>
             <p onClick={(): void => handleAttToCart()}>
                 <IonIcon icon={addOutline} />
-            </p>
-            <p onClick={(): void => handleRemoveFromCart()}>
-                <IonIcon icon={removeOutline} />
             </p>
         </div>
     )

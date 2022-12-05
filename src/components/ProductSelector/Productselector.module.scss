@@ -17,14 +17,22 @@
 
     .productName {
         font-size: 18px;
+        flex: 1;
     }
 }
 
 .productCardContainer {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 
     .left{}
     .right {}
+}
+
+.cardheader {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
 }

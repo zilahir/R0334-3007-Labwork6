@@ -25,16 +25,14 @@ const ProductSelector = (): ReactElement => {
                             }}>
                                 <IonCol key={product.id} className={styles.singleProduct}>
                                     <IonCard>
-                                        <IonCardHeader className="ion-no-padding">
+                                        <IonCardHeader className={styles.cardheader}>
+                                            <h3 className={styles.productName}>
+                                                {product.name}
+                                            </h3>
                                             <IonImg className={styles.productImage} src={product.image} />
                                         </IonCardHeader>
                                         <IonCardContent className={styles.productCardContainer}>
                                             <div className={styles.left}>
-                                                <div className={ styles.slideCount }>
-                                                    <h3 className={styles.productName}>
-                                                        {product.name}
-                                                    </h3>
-                                                </div>
                                                 <div className={ styles.slideHeader }>
                                                     {product.price} €
                                                 </div>

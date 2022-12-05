@@ -5,10 +5,12 @@ import { configureStore, MiddlewareArray } from '@reduxjs/toolkit'
 
 import auth from "./reducers/auth";
 import users from "./reducers/users"
+import cart from "./reducers/cart"
 
 const rootReducer = combineReducers({
     auth,
-    users
+    users,
+    cart,
 })
 
 const middlewares = [thunk, logger]

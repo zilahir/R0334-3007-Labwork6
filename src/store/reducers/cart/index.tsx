@@ -19,7 +19,7 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart(state, action): void {
-            state.products = [state.products, ...action.payload.products]
+            state.products = [...state.products, action.payload]
         },
         wipeCart(state): void {
             state.products = []

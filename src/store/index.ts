@@ -7,12 +7,14 @@ import auth from "./reducers/auth";
 import users from "./reducers/users";
 import cart from "./reducers/cart";
 import products from "./reducers/products";
+import orders from "./reducers/orders";
 
 const rootReducer = combineReducers({
     auth,
     users,
     cart,
     products,
+    orders
 })
 
 const middlewares = [thunk, logger]

@@ -2,7 +2,7 @@
 import { ReactElement } from 'react';
 import ProductPage from '../../pages/ProductPage';
 import { has, orderBy } from "lodash"
-import { flowerOutline } from 'ionicons/icons'
+import { flowerOutline, cartOutline } from 'ionicons/icons'
 
 import SignupPage from '../../pages/SignUp';
 import Login from '../../pages/Login';
@@ -62,7 +62,7 @@ export const appRoutes: ReadonlyArray<AppRoute> = [
         url: '/cart',
         component: Cart,
         tab: {
-            icon: '',
+            icon: cartOutline,
             order: 2,
         }
     }

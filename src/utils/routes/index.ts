@@ -2,18 +2,17 @@
 import { ReactElement } from 'react';
 import ProductPage from '../../pages/ProductPage';
 import { has, orderBy } from "lodash"
-import { flowerOutline, returnUpBackOutline } from 'ionicons/icons'
+import { flowerOutline } from 'ionicons/icons'
 
 import SignupPage from '../../pages/SignUp';
 import Login from '../../pages/Login';
+import Cart from '../../pages/Cart';
 
-export type RouteURL = "/products" | "/signup" | "/login"
+export type RouteURL = "/products" | "/signup" | "/login" | "/cart"
 export interface Tab {
     label: string,
     url: RouteURL,
     icon: string,
-    color: string,
-    backgroundColor: string,
     component?: () => ReactElement,
     order: number,
 }
@@ -30,9 +29,6 @@ interface HeaderIcons {
 
 export type TabRoute = Omit<Tab, "label" | "url" | "component">
 
-// omit takes a generic and omits the list of props
-// pick takes a generic and keeps only the list of props
-
 export interface AppRoute extends Omit<Tab, "icon" | "color" | "backgroundColor" | 'order' > {
     label: string,
     tab?: TabRoute,
@@ -46,8 +42,6 @@ export const appRoutes: ReadonlyArray<AppRoute> = [
         component: ProductPage,
         tab: {
             icon: flowerOutline,
-            color: "#76b140",
-            backgroundColor: "#ddf7c5",
             order: 1,
         },
         hasHeader: false
@@ -62,6 +56,15 @@ export const appRoutes: ReadonlyArray<AppRoute> = [
         url: '/login',
         component: Login,
         hasHeader: false
+    },
+    {
+        label: 'Cart',
+        url: '/cart',
+        component: Cart,
+        tab: {
+            icon: '',
+            order: 2,
+        }
     }
 ]
 

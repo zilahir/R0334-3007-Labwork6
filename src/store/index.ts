@@ -4,13 +4,15 @@ import logger from "redux-logger";
 import { configureStore, MiddlewareArray } from '@reduxjs/toolkit'
 
 import auth from "./reducers/auth";
-import users from "./reducers/users"
-import cart from "./reducers/cart"
+import users from "./reducers/users";
+import cart from "./reducers/cart";
+import products from "./reducers/products";
 
 const rootReducer = combineReducers({
     auth,
     users,
     cart,
+    products,
 })
 
 const middlewares = [thunk, logger]
